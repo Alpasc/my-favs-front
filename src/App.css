@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+* {
+  background-color: #252526;
+  color: whitesmoke;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.entete{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 3rem 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  width: 15rem;
+  border-radius: 10px;
+  border: 2px solid rgb(1, 207, 207);
+}
+
+.card img {
+  width: 12rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.card1 {
+  border: 2px solid rgb(1, 207, 207);
+  /* border-bottom: 2px solid teal; */
+}
+
+.card2 {
+  border: 2px solid fuchsia;
+}
+
+.card3 {
+  border: 2px solid yellow;
+}
+
+.card4 {
+  border: 2px solid rgb(32, 241, 32);
+}
+
+.card5 {
+  border: 2px solid red;
+}
+
+.card6 {
+  border: 2px solid orange;
+}
+
+.lign {
+  color: whitesmoke;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.signature {
+  display: flex;
+  margin: 2rem 10%;
+  text-align: right;
+}
+
+.year {
+  display: flex;
+  margin: 2rem 10%;
 }
