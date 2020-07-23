@@ -22,7 +22,7 @@ function App() {
             <Header />
             <Accueil />
             <Footer />
-            </Route>
+          </Route>
             <Route path='/film' component={FilmsList} />
 
             <Route path='/livre' component={BooksList} />
