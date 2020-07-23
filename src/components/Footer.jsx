@@ -5,7 +5,7 @@ export default class Footer extends Component {
     return (
       <div>
         <hr className='lign' />
-      <footer>
+      <footer className="finPage">
         <p className='signature'><a href="https://github.com/Alpasc">Créé par  Alpasc</a></p>
         <p className="year">2020</p>
       </footer>

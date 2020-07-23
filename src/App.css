@@ -29,7 +29,6 @@
 .card img {
   width: 12rem;
   height: auto;
-  margin-bottom: 1rem;
 }
 
 .card1 {
@@ -66,10 +65,11 @@
   color: whitesmoke;
 }
 
-footer {
+.finPage {
   display: flex;
   justify-content: space-between;
-  
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .signature {
