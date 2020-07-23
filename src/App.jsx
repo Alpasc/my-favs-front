@@ -11,6 +11,7 @@ import SeriesList from './components/bibliotheques/SeriesList';
 import PhotosList from './components/bibliotheques/PhotosList';
 import MusicsList from './components/bibliotheques/MusicsList';
 import GamesList from './components/bibliotheques/GamesList';
+import FilmForm from './components/formulairesAjout/FilmForm';
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
             <Route path='/musique' component={MusicsList} />
 
             <Route path='/jeuvideo' component={GamesList} />
+
+            <Route path='/ajout-film' component={FilmForm} />
             
         </Switch>
       </Router>

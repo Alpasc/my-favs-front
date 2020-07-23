@@ -9,7 +9,7 @@ export default function FilmModale({ film, filmClick }) {
         <thead>
           <tr>
             <td>
-              <h2 className="color">Mon film en détail</h2>
+              <h2 className="color">{film.nom} en détail</h2>
             </td>
             <td>
               <button type="submit" className="" onClick={() => filmClick()}>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 // import Footer from '../Footer';
 import FilmModale from '../modales/FilmModale';
 
@@ -82,8 +83,12 @@ export default class Film extends Component {
         ))}
       </table>
       <div className="ajoutFilm">
-        <h4><a>Ajouter un film</a></h4>
-        <h4><a>Rechercher un film</a></h4>
+        <Link to="/ajout-film" style={{ textDecoration: 'none' }}>
+          <h4>Ajouter un film</h4>
+        </Link>
+        <Link to="/chercher-film" style={{ textDecoration: 'none' }}>
+          <h4>Rechercher un film</h4>
+        </Link>
       </div>
       {displayModale ? <FilmModale film={filmSelected} filmClick={this.filmClick} /> : null}
       {/* <Footer /> */}
