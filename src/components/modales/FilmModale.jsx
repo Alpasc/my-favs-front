@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 
 export default function FilmModale({ film, filmClick }) {
   return (
@@ -49,8 +50,9 @@ export default function FilmModale({ film, filmClick }) {
       </table>
       <img src={film.affiche} alt="" />
       <div className="video">
-        <iframe src={film.trailer} frameBorder='0' allow='autoplay; encrypted-media' allowFullScreen title={film.name}></iframe>
-      </div>
+        <h4>Bande annonce de {film.nom}</h4>
+          <ReactPlayer url={film.trailer} />
+        </div>
     </div>
   )
 }
