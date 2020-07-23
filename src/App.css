@@ -127,3 +127,7 @@
   text-align: center;
   background-color: #12121a;
 }
+
+.afficheModale {
+  cursor: pointer;
+}
