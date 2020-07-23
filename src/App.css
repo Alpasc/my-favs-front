@@ -3,6 +3,8 @@
   color: whitesmoke;
 }
 
+            /* Page d'accueil */
+
 .entete{
   display: flex;
   flex-direction: column;
@@ -23,7 +25,6 @@
   margin: 2rem;
   width: 15rem;
   border-radius: 10px;
-  border: 2px solid rgb(1, 207, 207);
 }
 
 .card img {
@@ -66,6 +67,7 @@
 }
 
 .finPage {
+  max-height: 10rem;
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -85,4 +87,43 @@
 .year {
   display: flex;
   margin: 2rem 10%;
+}
+
+      /* Bibliotheques*/
+
+.movie h1 {
+  color: rgb(1, 207, 207);
+}
+
+.tabTitle {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5rem;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+.movieTable {
+  border: medium solid rgb(1, 207, 207);
+  margin: 1rem;
+  border-collapse: collapse;
+  width: auto;
+  justify-content: center;
+}
+
+.tabEntry {
+  font-family: monospace;
+  border: thin solid rgb(1, 207, 207);
+  width: 50%;
+  padding: 5px;
+  background-color: rgb(204, 247, 247);
+  color: #252526;
+  /* background-image: url(sky.jpg); */
+}
+.filmTab {
+  font-family: sans-serif;
+  border: thin solid rgb(1, 207, 207);
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+  background-color: #12121a;
 }
