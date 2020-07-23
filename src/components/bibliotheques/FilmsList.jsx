@@ -27,7 +27,7 @@ export default class Film extends Component {
   }
 
   filmClick(infoFilm) {
-    const { displayModale, filmSelected } = this.state;
+    const { displayModale } = this.state;
     this.setState({ displayModale: !displayModale});
     this.setState({filmSelected: infoFilm});
   }
@@ -65,21 +65,27 @@ export default class Film extends Component {
           <th className='tabEntry'>Titre</th>
           <th className='tabEntry'>Réalisateur</th>
           <th className='tabEntry'>Acteurs</th>
-          <th className='tabEntry'>Genre</th>
+          {/* <th className='tabEntry'>Genre</th> */}
+          <th className='tabEntry'>Affiche</th>
           <th className='tabEntry'>Supprimer</th>
         </tr>
 
         {films.map(film => (
           <tr className='sectionTab'>
             <td className='filmTab afficheModale' key={film.id} onClick={() => this.filmClick(film)}>{film.nom}</td>
-            <td className='filmTab' key={film.id}>{film.realisateur}</td>
-            <td className='filmTab' key={film.id}>{film.acteurs}</td>
-            <td className='filmTab' key={film.id}>{film.genre}</td>
-            <td className='filmTab'><button key={film.id} type="button" onClick={() => this.deleteMovie(film.id)}>X</button></td>
+            <td className='filmTab real' key={film.id}>{film.realisateur}</td>
+            <td className='filmTab acteur' key={film.id}>{film.acteurs}</td>
+            <td className='filmTab' key={film.id}><img className="thumbnail" src={film.affiche} alt="affiche du film" /></td>
+            {/* <td className='filmTab genre' key={film.id}>{film.genre}</td> */}
+            <td className='filmTab supprimer'><button key={film.id} type="button" onClick={() => this.deleteMovie(film.id)}>X</button></td>
           </tr>
         ))}
-        {displayModale ? <FilmModale film={filmSelected} filmClick={this.filmClick} /> : null}
       </table>
+      <div className="ajoutFilm">
+        <h4><a>Ajouter un film</a></h4>
+        <h4><a>Rechercher un film</a></h4>
+      </div>
+      {displayModale ? <FilmModale film={filmSelected} filmClick={this.filmClick} /> : null}
       {/* <Footer /> */}
       </div>
     )

@@ -33,7 +33,7 @@
 }
 
 .card1 {
-  border: 2px solid rgb(1, 207, 207);
+  border: 2px solid rgb(65, 240, 240);
   /* border-bottom: 2px solid teal; */
 }
 
@@ -92,7 +92,7 @@
       /* Bibliotheques*/
 
 .movie h1 {
-  color: rgb(1, 207, 207);
+  color: rgb(65, 240, 240);
 }
 
 .tabTitle {
@@ -103,8 +103,8 @@
   margin-bottom: 1rem;
 }
 .movieTable {
-  border: medium solid rgb(1, 207, 207);
-  margin: 1rem;
+  border: medium solid rgb(65, 240, 240);
+  margin: 5% 7%;
   border-collapse: collapse;
   width: auto;
   justify-content: center;
@@ -112,7 +112,7 @@
 
 .tabEntry {
   font-family: monospace;
-  border: thin solid rgb(1, 207, 207);
+  border: thin solid rgb(65, 240, 240);
   width: 50%;
   padding: 5px;
   background-color: rgb(204, 247, 247);
@@ -121,8 +121,8 @@
 }
 .filmTab {
   font-family: sans-serif;
-  border: thin solid rgb(1, 207, 207);
-  width: 50%;
+  border: thin solid rgb(65, 240, 240);
+  
   padding: 5px;
   text-align: center;
   background-color: #12121a;
@@ -130,4 +130,18 @@
 
 .afficheModale {
   cursor: pointer;
+}
+
+.sectionTab {
+  height: 9rem;
+}
+
+.thumbnail {
+  width: auto;
+  height: 9rem;
+}
+
+.ajoutFilm {
+  display: flex;
+  justify-content: space-around;
 }

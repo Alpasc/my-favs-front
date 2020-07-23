@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import './modale.css';
 
 export default function FilmModale({ film, filmClick }) {
   return (
@@ -48,7 +49,7 @@ export default function FilmModale({ film, filmClick }) {
           </tr>
         </tbody>
       </table>
-      <img src={film.affiche} alt="" />
+      <img src={film.affiche} alt="affiche du film" className="poster" />
       <div className="video">
         <h4>Bande annonce de {film.nom}</h4>
           <ReactPlayer url={film.trailer} />
