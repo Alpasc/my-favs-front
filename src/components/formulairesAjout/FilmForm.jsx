@@ -203,14 +203,13 @@ export default class FilmForm extends Component {
               />
           </div>
           <hr />
-          <div>
+          <div className="formBtn">
             {/* <Link to="/film" style={{ textDecoration: 'none' }}> */}
               <input type="submit" value="Envoyer !" />
             {/* </Link> */}
             <Link to="/film" style={{ textDecoration: 'none' }}>
-            <button type='button'>Retour</button>
+            <button type='button'>Fini !</button>
             </Link>
-
           </div>
           </fieldset>
         </form>

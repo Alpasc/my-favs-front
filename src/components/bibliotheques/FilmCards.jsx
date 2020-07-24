@@ -61,16 +61,16 @@ export default class Film extends Component {
         <div className="movie entete">
           <h1>Ma Filmothèque</h1>
         </div>
-        <div className='filmCards'>
+        <div className='cardsContainer'>
         {films.map(film => (
-          <div className='filmTab filmCard'>
+          <div className='filmCard'>
             <h3 className='afficheModale cardTitle' key={film.id} onClick={() => this.filmClick(film)}>{film.nom}</h3>
             <h4 className='real cardDetail'>{film.realisateur}</h4>
             <p className='cardDetail'>{film.acteurs}</p>
             <p className='cardDetail'>{film.genre}</p>
             <img className="thumbnail cardDetail" src={film.affiche} alt="affiche du film"/>
             <br />
-            <button className='supp' key={film.id} type="button" onClick={() => this.deleteMovie(film.id)}>Modifier</button>
+            <button className='supp' key={film.id} type="button" onClick={() => this.updateMovie(film.id)}>Modifier</button>
             <br />
             <button className='supp' key={film.id} type="button" onClick={() => this.deleteMovie(film.id)}>Supprimer</button>
           </div>

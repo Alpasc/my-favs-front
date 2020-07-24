@@ -97,7 +97,7 @@
   margin-bottom: 5rem;
 }
 
-.filmCards {
+.cardsContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -105,7 +105,7 @@
   
 }
 
-.filmTab {
+.filmCard {
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
@@ -143,4 +143,11 @@
 .ajoutFilm {
   display: flex;
   justify-content: space-around;
+}
+
+   /*  Formulaires   */
+
+.formBtn {
+  display: flex;
+  justify-content: space-evenly;
 }
