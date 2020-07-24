@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Accueil from './components/Accueil';
 import Footer from './components/Footer';
-import FilmsList from './components/bibliotheques/FilmsList';
-import BooksList from './components/bibliotheques/BooksList';
-import SeriesList from './components/bibliotheques/SeriesList';
-import PhotosList from './components/bibliotheques/PhotosList';
-import MusicsList from './components/bibliotheques/MusicsList';
-import GamesList from './components/bibliotheques/GamesList';
+import FilmCards from './components/bibliotheques/FilmCards';
+import BookCards from './components/bibliotheques/BookCards';
+import SerieCards from './components/bibliotheques/SerieCards';
+import PhotoCards from './components/bibliotheques/PhotoCards';
+import MusicCards from './components/bibliotheques/MusicCards';
+import GameCards from './components/bibliotheques/GameCards';
 import FilmForm from './components/formulairesAjout/FilmForm';
+
 
 
 function App() {
@@ -24,17 +25,17 @@ function App() {
             <Accueil />
             <Footer />
           </Route>
-            <Route path='/film' component={FilmsList} />
+            <Route path='/film' component={FilmCards} />
 
-            <Route path='/livre' component={BooksList} />
+            <Route path='/livre' component={BookCards} />
 
-            <Route path='/serie' component={SeriesList} />
+            <Route path='/serie' component={SerieCards} />
 
-            <Route path='/photo' component={PhotosList} />
+            <Route path='/photo' component={PhotoCards} />
 
-            <Route path='/musique' component={MusicsList} />
+            <Route path='/musique' component={MusicCards} />
 
-            <Route path='/jeuvideo' component={GamesList} />
+            <Route path='/jeuvideo' component={GameCards} />
 
             <Route path='/ajout-film' component={FilmForm} />
             

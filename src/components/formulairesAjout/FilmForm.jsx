@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class FilmForm extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ export default class FilmForm extends Component {
       nom: '',
       realisateur: '',
       acteurs: '',
+      genre_id:'',
       annee_sortie: '',
       pays: '',
       trailer: '',
@@ -26,17 +28,51 @@ export default class FilmForm extends Component {
   }
 
   submitForm(e) {
+    const {
+      nom,
+      realisateur,
+      acteurs,
+      genre_id,
+      annee_sortie,
+      pays,
+      trailer,
+      affiche,
+      synopsis,
+      commentaire
+    } = this.state;
     e.preventDefault();
     const url = '/film';
     axios
-      .post(url, this.state)
-      .then(res => res.data)
-      .then(res => {
+      .post(url, { nom,
+        realisateur,
+        acteurs,
+        genre_id,
+        annee_sortie,
+        pays,
+        trailer,
+        affiche,
+        synopsis,
+        commentaire })
+      .then((res) => res.data)
+      .then((res) => {
         alert(`Chouette ! Un film de plus à voir et revoir !`);
+        this.setState({
+          nom: '',
+          realisateur: '',
+          acteurs: '',
+          genre_id:'',
+          annee_sortie: '',
+          pays: '',
+          trailer: '',
+          affiche: '',
+          synopsis: '',
+          commentaire: ''
+        })
       })
       .catch(event => {
         alert(`Erreur lors de l'ajout du film`);
       });
+
   }
 
   render() {
@@ -44,7 +80,7 @@ export default class FilmForm extends Component {
       nom,
       realisateur,
       acteurs,
-      genre,
+      genre_id,
       annee_sortie,
       pays,
       trailer,
@@ -61,8 +97,8 @@ export default class FilmForm extends Component {
           <div className='form-data'>
             <label htmlFor='nom'>Titre</label>
             <input
+              ref={input => this.nom = input}
               type='text'
-              id='nom'
               name='nom'
               onChange={this.onChange}
               value={nom}
@@ -72,7 +108,6 @@ export default class FilmForm extends Component {
             <label htmlFor='realisateur'>Réalisateur</label>
             <input
               type='text'
-              id='realisateur'
               name='realisateur'
               onChange={this.onChange}
               value={realisateur}
@@ -82,7 +117,6 @@ export default class FilmForm extends Component {
             <label htmlFor='acteurs'>Acteurs</label>
             <input
               type='text'
-              id='acteurs'
               name='acteurs'
               onChange={this.onChange}
               value={acteurs}
@@ -90,34 +124,34 @@ export default class FilmForm extends Component {
           </div>
           <div className="form-data">
             <label>Genre</label>
-            <select type='submit' name='genre' onChange={this.onChange} value={genre}>
-              <option valeur='10'>Action</option>
-              <option valeur='11'>Aventure</option>
-              <option valeur='12'>Biopic</option>
-              <option valeur='13'>Catastrophe</option>
-              <option valeur='14'>Comédie</option>
-              <option valeur='15'>Comédie Musicale</option>
-              <option valeur='16'>Comédie Romantique</option>
-              <option valeur='17'>Documentaire</option>
-              <option valeur='18'>Drame</option>
-              <option valeur='19'>Espionnage</option>
-              <option valeur='20'>Fantastique</option>
-              <option valeur='21'>Fantasy</option>
-              <option valeur='22'>Guerre</option>
-              <option valeur='23'>Historique</option>
-              <option valeur='24'>Horreur</option>
-              <option valeur='25'>Policier</option>
-              <option valeur='26'>Science-Fiction</option>
-              <option valeur='27'>Super-Héros</option>
-              <option valeur='28'>Thriller</option>
-              <option valeur='29'>Werstern</option>
+            <select type='submit' name='genre_id' onChange={this.onChange} value={genre_id}>
+              <option value=''></option>
+              <option value='1'>Action</option>
+              <option value='2'>Aventure</option>
+              <option value='3'>Biopic</option>
+              <option value='4'>Catastrophe</option>
+              <option value='5'>Comédie</option>
+              <option value='6'>Comédie Musicale</option>
+              <option value='7'>Comédie Romantique</option>
+              <option value='8'>Documentaire</option>
+              <option value='9'>Drame</option>
+              <option value='10'>Espionnage</option>
+              <option value='11'>Fantastique</option>
+              <option value='12'>Fantasy</option>
+              <option value='13'>Guerre</option>
+              <option value='14'>Historique</option>
+              <option value='15'>Horreur</option>
+              <option value='16'>Policier</option>
+              <option value='17'>Science-Fiction</option>
+              <option value='18'>Super-Héros</option>
+              <option value='19'>Thriller</option>
+              <option value='20'>Werstern</option>
             </select>
           </div>
           <div className='form-data'>
             <label htmlFor='annee_sortie'>Année de sortie</label>
             <input
               type='num'
-              id='annee_sortie'
               name='annee_sortie'
               onChange={this.onChange}
               value={annee_sortie}
@@ -127,7 +161,6 @@ export default class FilmForm extends Component {
             <label htmlFor='pays'>Pays de production</label>
             <input
               type='text'
-              id='pays'
               name='pays'
               onChange={this.onChange}
               value={pays}
@@ -137,7 +170,6 @@ export default class FilmForm extends Component {
             <label htmlFor='trailer'>Bande annonce (Youtube)</label>
             <input
               type='url'
-              id='trailer'
               name='trailer'
               onChange={this.onChange}
               value={trailer}
@@ -147,7 +179,6 @@ export default class FilmForm extends Component {
             <label htmlFor='affiche'>Affiche</label>
             <input
               type='url'
-              id='affiche'
               name='affiche'
               onChange={this.onChange}
               value={affiche}
@@ -156,8 +187,7 @@ export default class FilmForm extends Component {
           <div className='form-data'>
             <label htmlFor='synopsis'>Synopsis</label>
             <input
-              type='textarea'
-              id='synopsis'
+              type='text'
               name='synopsis'
               onChange={this.onChange}
               value={synopsis}
@@ -166,8 +196,7 @@ export default class FilmForm extends Component {
           <div className='form-data'>
             <label htmlFor='commentaire'>Commentaire</label>
             <input
-              type='textarea'
-              id='commentaire'
+              type='text'
               name='commentaire'
               onChange={this.onChange}
               value={commentaire}
@@ -175,7 +204,13 @@ export default class FilmForm extends Component {
           </div>
           <hr />
           <div>
-            <input type="submit" value="Envoyer !" />
+            {/* <Link to="/film" style={{ textDecoration: 'none' }}> */}
+              <input type="submit" value="Envoyer !" />
+            {/* </Link> */}
+            <Link to="/film" style={{ textDecoration: 'none' }}>
+            <button type='button'>Retour</button>
+            </Link>
+
           </div>
           </fieldset>
         </form>
