@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export default class FilmForm extends Component {
   constructor(props) {
@@ -55,7 +56,21 @@ export default class FilmForm extends Component {
         commentaire })
       .then((res) => res.data)
       .then((res) => {
-        alert(`Chouette ! Un film de plus à voir et revoir !`);
+        Swal.fire({
+          icon: 'success',
+          title: 'Chouette !',
+          text: 'Un nouveau film culte à voir et revoir !',
+          timer: 4000,
+          background: 'rgb(65, 240, 240)',
+          showClass: {
+            popup: 'swal2-noanimation',
+            backdrop: 'swal2-noanimation'
+          },
+          hideClass: {
+            popup: '',
+            backdrop: ''
+          }
+        });
         this.setState({
           nom: '',
           realisateur: '',
