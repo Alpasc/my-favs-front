@@ -40,7 +40,7 @@
 }
 
 .card1 {
-  border: 2px solid rgb(65, 240, 240);
+  border: 2px solid rgb(218, 218, 218);
   /* border-bottom: 2px solid teal; */
 }
 
@@ -96,18 +96,21 @@
 
       /* Bibliotheques*/
 
-.container {
-  height: 100vh;
+.bibliHeader {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid rgb(65, 240, 240);
 }
 
 .movie h1, h2 {
   color: rgb(65, 240, 240);
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .retour {
   margin-left: 4rem;
+  margin-bottom: 2rem;
 }
 
 .ajoutFilm {

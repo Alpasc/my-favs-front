@@ -64,10 +64,12 @@ export default class Film extends Component {
     const { films, displayModale, filmSelected } = this.state;
     return (
       <div className="container">
+      <div className="bibliHeader">
         <div className="movie entete">
-          <h1>Ma Filmothèque</h1>
+          <h1 className='listTitle'>Ma Filmothèque</h1>
         </div>
         <Link to="/" style={{ textDecoration: 'none' }}><p className="retour">Retour</p></Link>
+        </div>
         <div className="ajoutFilm">
           <Link to="/ajout-film" style={{ textDecoration: 'none' }}>
             <h4>Ajouter un film</h4>
