@@ -10,12 +10,25 @@ export default class Film extends Component {
     this.state = {
       films: [],
       displayModale: false,
-      filmSelected: null
+      filmSelected: null,
+      visible: false
     };
     this.filmClick = this.filmClick.bind(this);
     this.deleteMovie = this.deleteMovie.bind(this);
     // this.filterMovies = this.filterMovies.bind(this);
   }
+
+  // montre = () => {
+  //   this.setState({
+  //     visible: true
+  //   })
+  // }
+
+  // cache = () => {
+  //   this.setState({
+  //     visible: false
+  //   })
+  // }
 
   componentDidMount() {
     axios
@@ -88,9 +101,9 @@ export default class Film extends Component {
             <p className='cardDetail'>{film.genre}</p>
             <img className="thumbnail cardDetail" src={film.affiche} alt="affiche du film"/>
             <br />
-            <button className='supp' key={film.id} type="button" onClick={() => this.updateMovie(film.id)}>Modifier</button>
+            <button className='supp' type="button" onClick={() => this.updateMovie(film.id)}>Modifier</button>
             <br />
-            <button className='supp' key={film.id} type="button" onClick={() => this.deleteMovie(film.id)}>Supprimer</button>
+            <button className='supp' type="button" onClick={() => this.deleteMovie(film.id)}>Supprimer</button>
           </div>
         ))}
         </div>

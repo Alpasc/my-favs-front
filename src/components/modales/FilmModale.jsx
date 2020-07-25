@@ -2,58 +2,50 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import './modale.css';
 
-export default function FilmModale({ film, filmClick }) {
+export default function FilmModale({ film, filmClick, props}) {
   return (
-    <div>
-      <table className="">
-        <thead>
-          <tr>
-            <td>
-              <h2 className="color">{film.nom} en détail</h2>
-            </td>
-            <td>
-              <button type="submit" className="" onClick={() => filmClick()}>
-                Fermer [X]
-              </button>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Nom :</td>
-            <td>{film.nom}</td>
-          </tr>
-          <tr>
-            <td>Réalisateur :</td>
-            <td>{film.realisateur}</td>
-          </tr>
-          <tr>
-            <td>Acteurs :</td>
-            <td>{film.acteurs}</td>
-          </tr>
-          <tr>
-            <td>Année de de sortie :</td>
-            <td>{film.annee_sortie}</td>
-          </tr>
-          <tr>
-            <td>Pays :</td>
-            <td>{film.pays}</td>
-          </tr>
-          <tr>
-            <td>Synopsis :</td>
-            <td>{film.synopsis}</td>
-          </tr>
-          <tr>
-            <td>Commentaire :</td>
-            <td>{film.commentaire}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div className="modale border position padding layout1 scale-in-hor-center">
+      <div className="close">
+        <button type="submit" className="" onClick={() => filmClick()}>
+        [X]
+        </button>
+      </div>
+      <div>
+        <h2 className="color">{film.nom} en détail</h2>
+      </div>
+      <div className="tabContainer">
       <img src={film.affiche} alt="affiche du film" className="poster" />
-      <div className="video">
-        <h4>Bande annonce de {film.nom}</h4>
-          <ReactPlayer url={film.trailer} />
+      <tbody className="tabBody">
+        <div className="element">
+          <h4>Réalisateur :</h4>
+          <p>{film.realisateur}</p>
         </div>
+        <div className="element">
+          <h4>Acteurs :</h4>
+          <p>{film.acteurs}</p>
+        </div>
+        <div className="element">
+          <h4>Année de de sortie :</h4>
+          <p>{film.annee_sortie}</p>
+        </div>
+        <div className="element">
+          <h4>Pays :</h4>
+          <p>{film.pays}</p>
+        </div>
+        <div className="element">
+          <h4>Synopsis :</h4>
+          <p>{film.synopsis}</p>
+        </div>
+        <div className="element">
+          <h4>Commentaire :</h4>
+          <p>{film.commentaire}</p>
+        </div>
+      </tbody>
+      </div>
+      <div className="video">
+      <h4>Bande annonce de {film.nom}</h4>
+        <ReactPlayer url={film.trailer} className="player" width='100%' height='100%' /*playing*/ />
+      </div>
     </div>
   )
 }
