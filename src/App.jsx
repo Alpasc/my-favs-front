@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/accueil">
+          <Route exact path="/">
             <Header />
             <Accueil />
             <Footer />

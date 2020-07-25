@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 export default class FilmForm extends Component {
@@ -57,19 +57,17 @@ export default class FilmForm extends Component {
       .then((res) => res.data)
       .then((res) => {
         Swal.fire({
-          icon: 'success',
           title: 'Chouette !',
+          titleColor: 'rgb(65, 240, 240)',
           text: 'Un nouveau film culte à voir et revoir !',
-          timer: 4000,
-          background: 'rgb(65, 240, 240)',
-          showClass: {
-            popup: 'swal2-noanimation',
-            backdrop: 'swal2-noanimation'
-          },
-          hideClass: {
-            popup: '',
-            backdrop: ''
-          }
+          imageUrl: 'https://zupimages.net/up/20/30/np28.png',
+          imageWidth: 200,
+          imageHeight: 200,
+          background: 'rgb(30, 151, 151)',
+          html: '<a href="/film">Retour à ma liste</a>',
+          showCloseButton: true,
+          confirmButtonText: 'Ajouter un autre film !',
+          confirmButtonColor: 'rgb(22, 207, 207'
         });
         this.setState({
           nom: '',
@@ -85,9 +83,17 @@ export default class FilmForm extends Component {
         })
       })
       .catch(event => {
-        alert(`Erreur lors de l'ajout du film`);
+        Swal.fire({
+          position: 'top-end',
+          imageUrl: 'https://zupimages.net/up/20/30/66lh.png',
+          imageWidth: 200,
+          imageHeight: 200,
+          background: 'rgb(30, 151, 151)',
+          text: 'Remplis les 5 premiers champs',
+          showConfirmButton: false,
+          timer: 1800
+        })
       });
-
   }
 
   render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import Footer from '../Footer';
+import Footer from '../Footer';
 import FilmModale from '../modales/FilmModale';
 
 export default class Film extends Component {
@@ -57,13 +57,22 @@ export default class Film extends Component {
   render() {
     const { films, displayModale, filmSelected } = this.state;
     return (
-      <div>
+      <div className="container">
         <div className="movie entete">
           <h1>Ma Filmothèque</h1>
         </div>
+        <Link to="/" style={{ textDecoration: 'none' }}><p className="retour">Retour</p></Link>
+        <div className="ajoutFilm">
+          <Link to="/ajout-film" style={{ textDecoration: 'none' }}>
+            <h4>Ajouter un film</h4>
+          </Link>
+          <Link to="/chercher-film" style={{ textDecoration: 'none' }}>
+            <h4>Rechercher un film</h4>
+          </Link>
+        </div>
         <div className='cardsContainer'>
         {films.map(film => (
-          <div className='filmCard'>
+          <div className='filmCard ombreout'>
             <h3 className='afficheModale cardTitle' key={film.id} onClick={() => this.filmClick(film)}>{film.nom}</h3>
             <h4 className='real cardDetail'>{film.realisateur}</h4>
             <p className='cardDetail'>{film.acteurs}</p>
@@ -76,16 +85,8 @@ export default class Film extends Component {
           </div>
         ))}
         </div>
-        <div className="ajoutFilm">
-          <Link to="/ajout-film" style={{ textDecoration: 'none' }}>
-            <h4>Ajouter un film</h4>
-          </Link>
-          <Link to="/chercher-film" style={{ textDecoration: 'none' }}>
-            <h4>Rechercher un film</h4>
-          </Link>
-        </div>
         {displayModale ? <FilmModale film={filmSelected} filmClick={this.filmClick} /> : null}
-        {/* <Footer /> */}
+        <Footer />
       </div>
     )
   }
