@@ -14,6 +14,7 @@ export default class Film extends Component {
     };
     this.filmClick = this.filmClick.bind(this);
     this.deleteMovie = this.deleteMovie.bind(this);
+    // this.filterMovies = this.filterMovies.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,11 @@ export default class Film extends Component {
         });
       });
   }
+
+  // filterMovies(genre) {
+  //   const filter = films.filter(film => film.genre);
+  //   filter.map
+  // }
 
   filmClick(infoFilm) {
     const { displayModale } = this.state;
@@ -69,6 +75,7 @@ export default class Film extends Component {
           <Link to="/chercher-film" style={{ textDecoration: 'none' }}>
             <h4>Rechercher un film</h4>
           </Link>
+          <h4 onClick={() => this.filterMovies()}>Trier par genre</h4>
         </div>
         <div className='cardsContainer'>
         {films.map(film => (
