@@ -46,33 +46,33 @@
 }
 
 .card2 {
-  border: 2px solid fuchsia;
+  /* border: 2px solid fuchsia; */
   padding:5px;
-  box-shadow:2px 2px 20px rgb(211, 214, 214);
+  box-shadow:2px 2px 20px fuchsia;
 }
 
 .card3 {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   padding:5px;
-  box-shadow:2px 2px 20px rgb(211, 214, 214);
+  box-shadow:5px 5px 20px yellow;
 }
 
 .card4 {
-  border: 2px solid rgb(32, 241, 32);
+  /* border: 2px solid rgb(32, 241, 32); */
   padding:5px;
-  box-shadow:2px 2px 20px rgb(211, 214, 214);
+  box-shadow:5px 5px 20px rgb(32, 241, 32);
 }
 
 .card5 {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding:5px;
-  box-shadow:2px 2px 20px rgb(211, 214, 214);
+  box-shadow:5px 5px 20px red;
 }
 
 .card6 {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   padding:5px;
-  box-shadow:2px 2px 20px rgb(211, 214, 214);
+  box-shadow:5px 5px 20px orange;
 }
 
 .ombreout {
