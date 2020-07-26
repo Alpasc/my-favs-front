@@ -11,11 +11,12 @@ export default class Film extends Component {
       films: [],
       displayModale: false,
       filmSelected: null,
-      visible: false
+      visible: false,
+      genre: ''
     };
     this.filmClick = this.filmClick.bind(this);
     this.deleteMovie = this.deleteMovie.bind(this);
-    // this.filterMovies = this.filterMovies.bind(this);
+    // this.genreFilter = this.genreFilter.bind(this);
   }
 
   // montre = () => {
@@ -41,10 +42,10 @@ export default class Film extends Component {
       });
   }
 
-  // filterMovies(genre) {
-  //   const filter = films.filter(film => film.genre);
-  //   filter.map
-  // }
+    // genreFilter (e) {
+    //   const newGenre = genreSelected;
+    //   this.props.genre(newGenre);
+    // }
 
   filmClick(infoFilm) {
     const { displayModale } = this.state;
@@ -90,7 +91,29 @@ export default class Film extends Component {
           <Link to="/chercher-film" style={{ textDecoration: 'none' }}>
             <h4>Rechercher un film</h4>
           </Link>
-          <h4 onClick={() => this.filterMovies()}>Trier par genre</h4>
+            <select type='submit' name='genre_id' onChange={this.genreFilter} value={this.props.genre}>
+              <option value=''>Afficher par genre</option>
+              <option value='1'>Action</option>
+              <option value='2'>Aventure</option>
+              <option value='3'>Biopic</option>
+              <option value='4'>Catastrophe</option>
+              <option value='5'>Comédie</option>
+              <option value='6'>Comédie Musicale</option>
+              <option value='7'>Comédie Romantique</option>
+              <option value='8'>Documentaire</option>
+              <option value='9'>Drame</option>
+              <option value='10'>Espionnage</option>
+              <option value='11'>Fantastique</option>
+              <option value='12'>Fantasy</option>
+              <option value='13'>Guerre</option>
+              <option value='14'>Historique</option>
+              <option value='15'>Horreur</option>
+              <option value='16'>Policier</option>
+              <option value='17'>Science-Fiction</option>
+              <option value='18'>Super-Héros</option>
+              <option value='19'>Thriller</option>
+              <option value='20'>Werstern</option>
+            </select>
         </div>
         <div className='cardsContainer'>
         {films.map(film => (

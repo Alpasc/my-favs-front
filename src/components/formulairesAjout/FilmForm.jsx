@@ -114,7 +114,7 @@ export default class FilmForm extends Component {
         <h2>Ajouter un nouveau film culte</h2>
         <form onSubmit={this.submitForm}>
           <fieldset>
-          <legend>Mets le plus d'info possible !</legend>
+          <legend>Remplis au mois les cinq premiers champs</legend>
           <div className='form-data'>
             <label htmlFor='nom'>Titre</label>
             <input
