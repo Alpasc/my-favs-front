@@ -35,33 +35,44 @@
 
 .card:hover {
   padding:5px;
-  box-shadow:5px 5px 20px gold;
+  box-shadow:10px 10px 20px gold;
   transform:scale(1.07);
 }
 
 .card1 {
-  border: 2px solid rgb(218, 218, 218);
-  /* border-bottom: 2px solid teal; */
+  /* border: 2px solid rgb(65, 240, 240); */
+  padding:5px;
+  box-shadow:2px 2px 20px rgb(65, 240, 240);
 }
 
 .card2 {
   border: 2px solid fuchsia;
+  padding:5px;
+  box-shadow:2px 2px 20px rgb(211, 214, 214);
 }
 
 .card3 {
   border: 2px solid yellow;
+  padding:5px;
+  box-shadow:2px 2px 20px rgb(211, 214, 214);
 }
 
 .card4 {
   border: 2px solid rgb(32, 241, 32);
+  padding:5px;
+  box-shadow:2px 2px 20px rgb(211, 214, 214);
 }
 
 .card5 {
   border: 2px solid red;
+  padding:5px;
+  box-shadow:2px 2px 20px rgb(211, 214, 214);
 }
 
 .card6 {
   border: 2px solid orange;
+  padding:5px;
+  box-shadow:2px 2px 20px rgb(211, 214, 214);
 }
 
 .ombreout {
