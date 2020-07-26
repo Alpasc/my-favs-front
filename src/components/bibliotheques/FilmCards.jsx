@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../Footer';
 import FilmModale from '../modales/FilmModale';
 
-export default class Film extends Component {
+export default class FilmCards extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ export default class Film extends Component {
     };
     this.filmClick = this.filmClick.bind(this);
     this.deleteMovie = this.deleteMovie.bind(this);
-    // this.genreFilter = this.genreFilter.bind(this);
+    this.genreFilter = this.genreFilter.bind(this);
   }
 
   // montre = () => {
@@ -42,10 +42,11 @@ export default class Film extends Component {
       });
   }
 
-    // genreFilter (e) {
-    //   const newGenre = genreSelected;
-    //   this.props.genre(newGenre);
-    // }
+    genreFilter (e) {
+     this.setState({
+       genre: e.target.value,
+     });
+   }
 
   filmClick(infoFilm) {
     const { displayModale } = this.state;
@@ -75,7 +76,8 @@ export default class Film extends Component {
   }
 
   render() {
-    const { films, displayModale, filmSelected } = this.state;
+    const { films, displayModale, filmSelected, genre } = this.state;
+    let newGenre = genre.toUpperCase();
     return (
       <div className="container">
       <div className="bibliHeader">
@@ -91,13 +93,13 @@ export default class Film extends Component {
           <Link to="/chercher-film" style={{ textDecoration: 'none' }}>
             <h4>Rechercher un film</h4>
           </Link>
-            <select type='submit' name='genre_id' onChange={this.genreFilter} value={this.props.genre}>
+            <select type='submit' name='genre_id' onChange={this.genreFilter} value={this.state.genre}>
               <option value=''>Afficher par genre</option>
               <option value='1'>Action</option>
               <option value='2'>Aventure</option>
               <option value='3'>Biopic</option>
               <option value='4'>Catastrophe</option>
-              <option value='5'>Comédie</option>
+              <option value='Comedie'>Comédie</option>
               <option value='6'>Comédie Musicale</option>
               <option value='7'>Comédie Romantique</option>
               <option value='8'>Documentaire</option>
@@ -116,13 +118,15 @@ export default class Film extends Component {
             </select>
         </div>
         <div className='cardsContainer'>
-        {films.map(film => (
+        {films.filter(test => test.genre.toUpperCase().startsWith(newGenre, 0)).map(film => (
           <div className='filmCard ombreout'>
             <h3 className='afficheModale cardTitle' key={film.id} onClick={() => this.filmClick(film)}>{film.nom}</h3>
             <h4 className='real cardDetail'>{film.realisateur}</h4>
             <p className='cardDetail'>{film.acteurs}</p>
             <p className='cardDetail'>{film.genre}</p>
-            <img className="thumbnail cardDetail" src={film.affiche} alt="affiche du film"/>
+            {film.affiche === "" ? 
+            (<img className="thumbnail cardDetail" src="https://via.placeholder.com/150" alt="bah, elle est où l'affiche ?"/>) : 
+              (<img className="thumbnail cardDetail" src={film.affiche} alt="affiche"/>)}
             <br />
             <button className='supp' type="button" onClick={() => this.updateMovie(film.id)}>Modifier</button>
             <br />
