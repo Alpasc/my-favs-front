@@ -33,35 +33,76 @@
   height: auto;
 }
 
-.card:hover {
+.card1 {
+  /* border: 2px solid rgb(65, 240, 240); */
   padding:5px;
-  box-shadow:5px 5px 20px gold;
+  box-shadow:5px 5px 30px rgb(65, 240, 240);
+}
+
+.card1:hover {
+  padding:5px;
+  box-shadow:2px 2px 15px rgb(65, 240, 240);
   transform:scale(1.07);
 }
 
-.card1 {
-  border: 2px solid rgb(65, 240, 240);
-  /* border-bottom: 2px solid teal; */
+.card2 {
+  /* border: 2px solid fuchsia; */
+  padding:5px;
+  box-shadow:5px 5px 30px fuchsia;
 }
 
-.card2 {
-  border: 2px solid fuchsia;
+.card2:hover {
+  padding:5px;
+  box-shadow:2px 2px 15px fuchsia;
+  transform:scale(1.07);
 }
 
 .card3 {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
+  padding:5px;
+  box-shadow:5px 5px 30px yellow;
+}
+
+.card3:hover {
+  padding:5px;
+  box-shadow:2px 2px 15px yellow;
+  transform:scale(1.07);
 }
 
 .card4 {
-  border: 2px solid rgb(32, 241, 32);
+  /* border: 2px solid rgb(32, 241, 32); */
+  padding:5px;
+  box-shadow:5px 5px 30px rgb(32, 241, 32);
+}
+
+.card4:hover {
+  padding:5px;
+  box-shadow:2px 2px 15px rgb(32, 241, 32);
+  transform:scale(1.07);
 }
 
 .card5 {
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  padding:5px;
+  box-shadow:5px 5px 30px red;
+}
+
+.card5:hover {
+  padding:5px;
+  box-shadow:2px 2px 15px red;
+  transform:scale(1.07);
 }
 
 .card6 {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
+  padding:5px;
+  box-shadow:5px 5px 30px orange;;
+}
+
+.card6:hover {
+  padding:5px;
+  box-shadow:2px 2px 15px orange;
+  transform:scale(1.07);
 }
 
 .ombreout {
@@ -144,8 +185,8 @@
 
 .filmCard:hover {
   padding:5px;
-  box-shadow:2px 2px 30px gold;
-  transform:scale(1.07);
+  box-shadow:2px 2px 30px rgb(65, 240, 240);
+  transform:scale(1.05);
 }
 
 .afficheModale {
@@ -165,6 +206,13 @@
   width: auto;
   height: 12rem;
   align-self: center;
+}
+
+.thumbnailRandom {
+  width: 12rem;
+  height: auto;
+  align-self: center;
+  margin: 2rem 0;
 }
 
 .supp {

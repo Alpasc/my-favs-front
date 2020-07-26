@@ -67,9 +67,6 @@ export default class FilmCards extends Component {
           this.setState({
             films: film.results
           });
-          // if (affiche === null) => {
-          //   affiche === 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.carousell.ph%2Fp%2Flooking-for-186410187%2F&psig=AOvVaw0WERJBgbGS2oyAUYgNlkWE&ust=1595689241949000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPil1eeT5uoCFQAAAAAdAAAAABAD';
-          // }
         });
       }) 
       .catch(error => console.log(error))
@@ -125,7 +122,7 @@ export default class FilmCards extends Component {
             <p className='cardDetail'>{film.acteurs}</p>
             <p className='cardDetail'>{film.genre}</p>
             {film.affiche === "" ? 
-            (<img className="thumbnail cardDetail" src="https://via.placeholder.com/150" alt="bah, elle est où l'affiche ?"/>) : 
+            (<img className="thumbnailRandom cardDetail" src="https://zupimages.net/up/20/30/ygk4.jpg" alt="bah, elle est où l'affiche ?"/>) : 
               (<img className="thumbnail cardDetail" src={film.affiche} alt="affiche"/>)}
             <br />
             <button className='supp' type="button" onClick={() => this.updateMovie(film.id)}>Modifier</button>
