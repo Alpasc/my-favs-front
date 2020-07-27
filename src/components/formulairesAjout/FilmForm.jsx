@@ -89,7 +89,7 @@ export default class FilmForm extends Component {
           imageWidth: 200,
           imageHeight: 200,
           background: 'rgb(30, 151, 151)',
-          text: 'Remplis les 5 premiers champs',
+          text: 'Les 5 premiers champs ne sont pas complétés',
           showConfirmButton: false,
           timer: 1800
         })
@@ -114,7 +114,7 @@ export default class FilmForm extends Component {
         <h2>Ajouter un nouveau film culte</h2>
         <form onSubmit={this.submitForm}>
           <fieldset>
-          <legend>Remplis au mois les cinq premiers champs</legend>
+          <legend>Remplis au moins les cinq premiers champs</legend>
           <div className='form-data'>
             <label htmlFor='nom'>Titre</label>
             <input
@@ -135,7 +135,7 @@ export default class FilmForm extends Component {
               />
           </div>
           <div className='form-data'>
-            <label htmlFor='acteurs'>Acteurs</label>
+            <label htmlFor='acteurs'>Acteur(s)</label>
             <input
               type='text'
               name='acteurs'
@@ -159,20 +159,23 @@ export default class FilmForm extends Component {
               <option value='10'>Espionnage</option>
               <option value='11'>Fantastique</option>
               <option value='12'>Fantasy</option>
-              <option value='13'>Guerre</option>
-              <option value='14'>Historique</option>
-              <option value='15'>Horreur</option>
-              <option value='16'>Policier</option>
-              <option value='17'>Science-Fiction</option>
-              <option value='18'>Super-Héros</option>
-              <option value='19'>Thriller</option>
-              <option value='20'>Werstern</option>
+              <option value='13'>Film d'animation</option>
+              <option value='14'>Guerre</option>
+              <option value='15'>Historique</option>
+              <option value='16'>Horreur</option>
+              <option value='17'>Policier</option>
+              <option value='18'>Science-Fiction</option>
+              <option value='19'>Super-Héros</option>
+              <option value='20'>Thriller</option>
+              <option value='21'>Werstern</option>
             </select>
           </div>
           <div className='form-data'>
             <label htmlFor='annee_sortie'>Année de sortie</label>
             <input
-              type='num'
+              type='number'
+              min="1900"
+              max="2021"
               name='annee_sortie'
               onChange={this.onChange}
               value={annee_sortie}

@@ -92,26 +92,26 @@ export default class FilmCards extends Component {
           </Link>
             <select type='submit' name='genre_id' onChange={this.genreFilter} value={this.state.genre}>
               <option value=''>Afficher par genre</option>
-              <option value='1'>Action</option>
-              <option value='2'>Aventure</option>
-              <option value='3'>Biopic</option>
-              <option value='4'>Catastrophe</option>
-              <option value='Comedie'>Comédie</option>
-              <option value='6'>Comédie Musicale</option>
-              <option value='7'>Comédie Romantique</option>
-              <option value='8'>Documentaire</option>
-              <option value='9'>Drame</option>
-              <option value='10'>Espionnage</option>
-              <option value='11'>Fantastique</option>
-              <option value='12'>Fantasy</option>
-              <option value='13'>Guerre</option>
-              <option value='14'>Historique</option>
-              <option value='15'>Horreur</option>
-              <option value='16'>Policier</option>
-              <option value='17'>Science-Fiction</option>
-              <option value='18'>Super-Héros</option>
-              <option value='19'>Thriller</option>
-              <option value='20'>Werstern</option>
+              <option value='Action'>Action</option>
+              <option value='Aventure'>Aventure</option>
+              <option value='Biopic'>Biopic</option>
+              <option value='Catastrophe'>Catastrophe</option>
+              <option value='Comédie'>Comédie</option>
+              <option value='Comédie Musicale'>Comédie Musicale</option>
+              <option value='Comédie Romantique'>Comédie Romantique</option>
+              <option value='Documentaire'>Documentaire</option>
+              <option value='Drame'>Drame</option>
+              <option value='Espionnage'>Espionnage</option>
+              <option value='Fantastique'>Fantastique</option>
+              <option value='Fantasy'>Fantasy</option>
+              <option value='Guerre'>Guerre</option>
+              <option value='Historique'>Historique</option>
+              <option value='Horreur'>Horreur</option>
+              <option value='Policier'>Policier</option>
+              <option value='Science-Fiction'>Science-Fiction</option>
+              <option value='Super-Héros'>Super-Héros</option>
+              <option value='Thriller'>Thriller</option>
+              <option value='Werstern'>Werstern</option>
             </select>
         </div>
         <div className='cardsContainer'>
