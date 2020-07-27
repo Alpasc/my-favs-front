@@ -57,17 +57,17 @@ export default class FilmForm extends Component {
       .then((res) => res.data)
       .then((res) => {
         Swal.fire({
-          title: 'Chouette !',
-          titleColor: 'rgb(65, 240, 240)',
+          icon: 'success',
+          title: 'Chouette, un nouveau film culte !',
           text: 'Un nouveau film culte à voir et revoir !',
-          imageUrl: 'https://zupimages.net/up/20/30/np28.png',
-          imageWidth: 200,
-          imageHeight: 200,
-          background: 'rgb(30, 151, 151)',
+          // imageUrl: 'https://zupimages.net/up/20/30/np28.png',
+          // imageWidth: 200,
+          // imageHeight: 200,
+          background: 'rgb(191, 248, 248)',
           html: '<a href="/film">Retour à ma liste</a>',
           showCloseButton: true,
           confirmButtonText: 'Ajouter un autre film !',
-          confirmButtonColor: 'rgb(22, 207, 207'
+          confirmButtonColor: 'rgb(22, 207, 207)'
         });
         this.setState({
           nom: '',
@@ -85,10 +85,11 @@ export default class FilmForm extends Component {
       .catch(event => {
         Swal.fire({
           position: 'top-end',
-          imageUrl: 'https://zupimages.net/up/20/30/66lh.png',
-          imageWidth: 200,
-          imageHeight: 200,
-          background: 'rgb(30, 151, 151)',
+          icon: 'error',
+          // imageUrl: 'https://zupimages.net/up/20/30/66lh.png',
+          // imageWidth: 200,
+          // imageHeight: 200,
+          background: 'rgb(191, 248, 248)',
           text: 'Les 5 premiers champs ne sont pas complétés',
           showConfirmButton: false,
           timer: 1800

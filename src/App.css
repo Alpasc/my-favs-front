@@ -1,14 +1,18 @@
-* {
+body {
   background-color: #252526;
   color: whitesmoke;
 }
 
             /* Page d'accueil */
 
-.entete{
+.entete {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.txtDeco {
+  color: whitesmoke
 }
 
 .cardList {
@@ -133,7 +137,7 @@
       /* Bibliotheques*/
 
 .bibliHeader {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   border-bottom: 1px solid rgb(65, 240, 240);
 }
@@ -161,13 +165,14 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 7rem;
-  
+
 }
 
 .filmCard {
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
+  position: relative;
   /* border: 2px solid rgb(65, 240, 240); */
   box-shadow:5px 5px 30px rgb(65, 240, 240);
   border-radius: 7px;
@@ -176,6 +181,7 @@
   text-align: center;
   background-color: #252526;
   width: 15rem;
+  height: 25rem;
   transition: all 0.5s ease;
 }
 
@@ -214,6 +220,11 @@
 .supp {
   background-color: rgb(65, 240, 240);
   color: black;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.8rem;
+  padding: 0 5rem;
+  border-radius: 5px;
 }
 
    /*  Formulaires   */
@@ -228,4 +239,9 @@
 .formBtn {
   display: flex;
   justify-content: space-evenly;
+}
+
+input, select {
+  background-color: #252526;
+  color: white;
 }

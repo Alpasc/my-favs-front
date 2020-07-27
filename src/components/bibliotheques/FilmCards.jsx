@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer';
 import FilmModale from '../modales/FilmModale';
+import { waitForElement } from '@testing-library/react';
+import Swal from 'sweetalert2';
 
 export default class FilmCards extends Component {
   constructor(props) {
@@ -55,6 +57,38 @@ export default class FilmCards extends Component {
   }
 
   deleteMovie(id) {
+    const swalButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    swalButtons.fire({
+      title: 'On efface vraiment ?',
+      text: "Il n'y aura pas de retour en arrière possible...",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Oui, supprime !',
+      cancelButtonText: 'Non, annule !',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        swalButtons.fire(
+          'Effacé !',
+          'Ton film a été effacé !',
+          'success'
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalButtons.fire(
+          'Annulé',
+          'Ouf ! tout va bien !'
+        )
+      }
+    })
     axios
       .delete(`/film/${id}`)
       .then(response => response.data)
@@ -81,11 +115,11 @@ export default class FilmCards extends Component {
         <div className="movie entete">
           <h1 className='listTitle'>Ma Filmothèque</h1>
         </div>
-        <Link to="/" style={{ textDecoration: 'none' }}><p className="retour">Retour</p></Link>
+        <Link to="/" style={{ textDecoration: 'none' }}><p className="retour txtDeco">Retour</p></Link>
         </div>
         <div className="ajoutFilm">
           <Link to="/ajout-film" style={{ textDecoration: 'none' }}>
-            <h4>Ajouter un film</h4>
+            <h4 className="txtDeco">Ajouter un film</h4>
           </Link>
           {/* <Link to="/chercher-film" style={{ textDecoration: 'none' }}>
             <h4>Rechercher un film</h4>
@@ -116,7 +150,7 @@ export default class FilmCards extends Component {
             </select>
         </div>
         <div className='cardsContainer'>
-        {films.filter(test => test.genre.toUpperCase().startsWith(newGenre, 0)).map(film => (
+        {films.filter(test => test.genre.toUpperCase().endsWith(newGenre)).map(film => (
           <div className='filmCard'>
             <h3 className='afficheModale cardTitle' key={film.id} onClick={() => this.filmClick(film)}>{film.nom}</h3>
             <h4 className='real cardDetail'>{film.realisateur}</h4>
