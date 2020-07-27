@@ -87,9 +87,9 @@ export default class FilmCards extends Component {
           <Link to="/ajout-film" style={{ textDecoration: 'none' }}>
             <h4>Ajouter un film</h4>
           </Link>
-          <Link to="/chercher-film" style={{ textDecoration: 'none' }}>
+          {/* <Link to="/chercher-film" style={{ textDecoration: 'none' }}>
             <h4>Rechercher un film</h4>
-          </Link>
+          </Link> */}
             <select type='submit' name='genre_id' onChange={this.genreFilter} value={this.state.genre}>
               <option value=''>Afficher par genre</option>
               <option value='Action'>Action</option>
@@ -104,6 +104,7 @@ export default class FilmCards extends Component {
               <option value='Espionnage'>Espionnage</option>
               <option value='Fantastique'>Fantastique</option>
               <option value='Fantasy'>Fantasy</option>
+              <option value='Film d&apos;animation'>Film d'animation</option>
               <option value='Guerre'>Guerre</option>
               <option value='Historique'>Historique</option>
               <option value='Horreur'>Horreur</option>
@@ -116,7 +117,7 @@ export default class FilmCards extends Component {
         </div>
         <div className='cardsContainer'>
         {films.filter(test => test.genre.toUpperCase().startsWith(newGenre, 0)).map(film => (
-          <div className='filmCard ombreout'>
+          <div className='filmCard'>
             <h3 className='afficheModale cardTitle' key={film.id} onClick={() => this.filmClick(film)}>{film.nom}</h3>
             <h4 className='real cardDetail'>{film.realisateur}</h4>
             <p className='cardDetail'>{film.acteurs}</p>
@@ -125,8 +126,8 @@ export default class FilmCards extends Component {
             (<img className="thumbnailRandom cardDetail" src="https://zupimages.net/up/20/30/ygk4.jpg" alt="bah, elle est où l'affiche ?"/>) : 
               (<img className="thumbnail cardDetail" src={film.affiche} alt="affiche"/>)}
             <br />
-            <button className='supp' type="button" onClick={() => this.updateMovie(film.id)}>Modifier</button>
-            <br />
+            {/* <button className='supp' type="button" onClick={() => this.updateMovie(film.id)}>Modifier</button>
+            <br /> */}
             <button className='supp' type="button" onClick={() => this.deleteMovie(film.id)}>Supprimer</button>
           </div>
         ))}

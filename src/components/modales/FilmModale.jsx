@@ -44,7 +44,7 @@ export default function FilmModale({ film, filmClick, props}) {
       </div>
       <div className="video">
       <h4>Bande annonce de {film.nom}</h4>
-        <ReactPlayer url={film.trailer} className="player" width='100%' height='100%' /*playing*/ />
+        <ReactPlayer url={film.trailer} className="player" /*width='100%' height='100%'*/ /*playing*/ />
       </div>
     </div>
   )
