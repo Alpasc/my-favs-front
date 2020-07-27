@@ -1,6 +1,7 @@
 body {
   background-color: #252526;
   color: whitesmoke;
+  min-height: 100vh;
 }
 
             /* Page d'accueil */
@@ -26,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem;
+  margin: 4rem;
   width: 15rem;
   border-radius: 10px;
   transition: all 0.5s ease;
@@ -117,6 +118,10 @@ body {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-top: thin solid whitesmoke;
 }
 
 .signature {
