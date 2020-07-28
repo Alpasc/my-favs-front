@@ -79,6 +79,21 @@ export default class FilmCards extends Component {
           'Ton film a été effacé !',
           'success'
         )
+        axios
+          .delete(`/film/${id}`)
+          .then(response => response.data)
+          .then(film => {
+            console.log(film);
+            axios
+            .get('/film')
+            .then(response => response.data)
+            .then(film => {
+              this.setState({
+               films: film.results
+              });
+            });
+          }) 
+      .catch(error => console.log(error))
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
@@ -89,21 +104,6 @@ export default class FilmCards extends Component {
         )
       }
     })
-    axios
-      .delete(`/film/${id}`)
-      .then(response => response.data)
-      .then(film => {
-        console.log(film);
-        axios
-        .get('/film')
-        .then(response => response.data)
-        .then(film => {
-          this.setState({
-            films: film.results
-          });
-        });
-      }) 
-      .catch(error => console.log(error))
   }
 
   render() {
