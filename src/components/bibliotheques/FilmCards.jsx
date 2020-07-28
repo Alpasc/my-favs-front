@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer';
 import FilmModale from '../modales/FilmModale';
-import { waitForElement } from '@testing-library/react';
 import Swal from 'sweetalert2';
 
 export default class FilmCards extends Component {
@@ -95,7 +94,6 @@ export default class FilmCards extends Component {
           }) 
       .catch(error => console.log(error))
       } else if (
-        /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
       ) {
         swalButtons.fire(
@@ -160,8 +158,10 @@ export default class FilmCards extends Component {
             (<img className="thumbnailRandom cardDetail" src="https://zupimages.net/up/20/30/ygk4.jpg" alt="bah, elle est où l'affiche ?"/>) : 
               (<img className="thumbnail cardDetail" src={film.affiche} alt="affiche"/>)}
             <br />
-            {/* <button className='supp' type="button" onClick={() => this.updateMovie(film.id)}>Modifier</button>
-            <br /> */}
+            <Link to='/modif-film'>
+              <button className='modif' type="button" onClick={handleMovieProps}>Modifier</button>
+            </Link>
+            <br />
             <button className='supp' type="button" onClick={() => this.deleteMovie(film.id)}>Supprimer</button>
           </div>
         ))}

@@ -12,6 +12,7 @@ import PhotoCards from './components/bibliotheques/PhotoCards';
 import MusicCards from './components/bibliotheques/MusicCards';
 import GameCards from './components/bibliotheques/GameCards';
 import FilmForm from './components/formulairesAjout/FilmForm';
+import ModifFilm from './components/modifications/ModifFilm';
 
 
 
@@ -38,6 +39,8 @@ function App() {
             <Route path='/jeuvideo' component={GameCards} />
 
             <Route path='/ajout-film' component={FilmForm} />
+
+            <Route path='/modi-film' component={ModifFilm}/>
             
         </Switch>
       </Router>

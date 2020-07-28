@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import axios from 'axios';
-import { Link} from 'react-router-dom';
 import Swal from 'sweetalert2';
+import FilmForm from '../formulairesAjout/FilmForm';
 
-export default class FilmForm extends Component {
+export default class ModifFilm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nom: '',
-      realisateur: '',
-      acteurs: '',
-      genre_id:'',
-      annee_sortie: '',
-      pays: '',
-      trailer: '',
-      affiche: '',
-      synopsis: '',
-      commentaire: ''
+      nom: {this.props.nom},
+      realisateur: {this.props.realisateur},
+      acteurs: {this.props.acteurs},
+      genre_id: {this.props.genre_id},
+      annee_sortie: {this.props.annee_sortie},
+      pays: {this.props.pays},
+      trailer: {this.props.trailer},
+      affiche: {this.props.affiche},
+      synopsis: {this.props.synopsis},
+      commentaire: {this.props.commentaire}
     };
     this.onChange = this.onChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
@@ -44,7 +44,8 @@ export default class FilmForm extends Component {
     e.preventDefault();
     const url = '/film';
     axios
-      .post(url, { nom,
+      .put(url, {
+        nom,
         realisateur,
         acteurs,
         genre_id,
@@ -53,38 +54,24 @@ export default class FilmForm extends Component {
         trailer,
         affiche,
         synopsis,
-        commentaire })
+        commentaire
+      })
       .then((res) => res.data)
       .then((res) => {
         Swal.fire({
           icon: 'success',
-          title: 'Chouette, un nouveau film culte !',
-          text: 'Un nouveau film culte à voir et revoir !',
+          title: 'La fiche du film a été mise à jour !',
           background: 'rgb(191, 248, 248)',
           html: '<a href="/film">Retour à ma liste</a>',
           showCloseButton: true,
-          confirmButtonText: 'Ajouter un autre film !',
-          confirmButtonColor: 'rgb(22, 207, 207)'
         });
-        this.setState({
-          nom: '',
-          realisateur: '',
-          acteurs: '',
-          genre_id:'',
-          annee_sortie: '',
-          pays: '',
-          trailer: '',
-          affiche: '',
-          synopsis: '',
-          commentaire: ''
-        })
       })
       .catch(event => {
         Swal.fire({
           position: 'top-end',
           icon: 'error',
           background: 'rgb(191, 248, 248)',
-          text: 'Les 5 premiers champs ne sont pas complétés',
+          text: 'Ah ! il ya eu un problème...',
           showConfirmButton: false,
           timer: 1800
         })
@@ -106,7 +93,7 @@ export default class FilmForm extends Component {
     } = this.state;
     return (
       <div className='filmForm'>
-        <h2>Ajouter un nouveau film culte</h2>
+        <h2>Modifier les info de {film.nom}</h2>
         <form onSubmit={this.submitForm}>
           <fieldset>
           <legend>Remplis au moins les cinq premiers champs</legend>
